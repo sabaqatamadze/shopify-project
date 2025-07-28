@@ -1,0 +1,12 @@
+.categories-page {
+  width: 98%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.categories-page .page-title {
+  font-size: 1.2rem;
+}
+.categories-page.dark .page-title {
+  color: white;
+}

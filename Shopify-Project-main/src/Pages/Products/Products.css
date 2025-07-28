@@ -1,0 +1,25 @@
+.products-page {
+  margin-top: 20px;
+  margin: 0 auto;
+  width: 98%;
+  max-width: 1500px;
+}
+.products-page .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.products-page .header .title {
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+
+.products-page .header select {
+  width: 160px;
+  height: 33px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}

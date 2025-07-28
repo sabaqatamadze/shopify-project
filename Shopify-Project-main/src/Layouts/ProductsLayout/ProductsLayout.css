@@ -1,0 +1,9 @@
+.products-layout .products-container {
+  display: grid;
+  grid-template-columns: repeat(4, min-content);
+  justify-content: space-between;
+  row-gap: 20px;
+}
+.products-layout .dark {
+  color: white;
+}

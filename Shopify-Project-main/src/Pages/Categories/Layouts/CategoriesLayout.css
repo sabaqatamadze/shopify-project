@@ -1,0 +1,6 @@
+.categories-layout {
+  display: grid;
+  grid-template-columns: repeat(6, max-content);
+  justify-content: space-between;
+  row-gap: 15px;
+}

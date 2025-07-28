@@ -1,0 +1,117 @@
+:root {
+  --light-black: #6b7274;
+}
+
+/* R - 255 */
+/* G - 255 */
+/* B - 255 */
+/* 255 * 255 * 255 */
+/* rgb(255,255,255) */
+/* FFFFFF */
+/* ABCDEF */
+/* abcdef */
+
+.nav-bar {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
+}
+.nav-bar.dark {
+  background-color: rgb(30, 41, 59);
+}
+.nav-bar .nav-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  max-width: 1500px;
+}
+.nav-bar .nav-container .logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.nav-bar .nav-container .logo a {
+  text-decoration: none;
+  color: black;
+}
+.nav-bar.dark .nav-container .logo a {
+  color: white;
+}
+.nav-bar .nav-container .search-bar {
+  height: min-content;
+  position: relative;
+}
+.nav-bar .nav-container .search-bar input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.nav-bar.dark .nav-container .search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.514);
+}
+.nav-bar .nav-container .search-bar input {
+  width: 400px;
+  height: 35px;
+  font-size: 1rem;
+  padding: 2px 15px;
+  border: 2px solid #3b82f6;
+  background-color: transparent;
+}
+
+.nav-bar .nav-container .search-bar .search-btn {
+  width: 43px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  font-size: 1.3rem;
+  background-color: #3b82f6;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-bar .nav-container .nav-right-side {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-bar .nav-container .nav-right-side .link {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: black;
+}
+.nav-bar.dark .nav-container .nav-right-side .link {
+  color: white;
+}
+.nav-bar .nav-container .nav-right-side .login-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 1.3rem;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.nav-bar .nav-container .nav-right-side .login-btn .text {
+  margin-left: 10px;
+}
+
+.nav-bar .nav-container .nav-right-side .right-side-icon {
+  border: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.nav-bar .light-black {
+  /* variable */
+  color: var(--light-black);
+}
+.nav-bar.dark .light-black {
+  color: white;
+}
+
+.nav-bar.dark .theme-btn {
+  color: white;
+}
