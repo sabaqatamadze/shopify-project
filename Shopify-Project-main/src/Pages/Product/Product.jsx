@@ -1,5 +1,5 @@
 import { getSingleProduct } from "@/helper/api";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Product.css";
 import { AuthContext } from "@/contexts/AuthContext";
@@ -10,13 +10,15 @@ const Product = () => {
 
   const [productData, setProductData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+
   const { userAuth } = useContext(AuthContext);
   const { setIsAuthModalOpen } = useContext(IsAuthModalOpenContext);
+
   const addToCart = () => {
     if (userAuth === null) {
       setIsAuthModalOpen(true);
-    };
- 
+    }
+  };
 
   useEffect(() => {
     getSingleProduct(product_id)
@@ -53,7 +55,10 @@ const Product = () => {
             ${productData.price}
           </p>
 
-          <button className="product-button" onClick={addToCart}>
+          <button
+            className="product-button"
+            onClick={addToCart}
+          >
             Add to Cart
           </button>
         </div>
@@ -64,4 +69,3 @@ const Product = () => {
 };
 
 export default Product;
-
