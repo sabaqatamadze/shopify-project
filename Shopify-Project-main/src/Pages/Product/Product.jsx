@@ -2,8 +2,8 @@ import { getSingleProduct } from "@/helper/api";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Product.css";
-import { AuthContext } from "@/../../contexts/AuthContext";
-import { IsAuthModalOpenContext } from "@/../../contexts/AuthModalContext";
+import { AuthContext } from "@/contexts/AuthContext";
+import { IsAuthModalOpenContext } from "@/contexts/AuthModalContext";
 
 const Product = () => {
   const { product_id } = useParams();
