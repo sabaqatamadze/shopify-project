@@ -1,10 +1,10 @@
-
 import { getSingleProduct } from "@/helper/api";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Product.css";
 import { AuthContext } from "@/contexts/AuthContext";
 import { IsAuthModalOpenContext } from "@/contexts/AuthModalContext";
+import { ThemeContext } from "@/contexts/ThemeContext";
 
 const Product = () => {
   const { product_id } = useParams();
@@ -14,6 +14,7 @@ const Product = () => {
 
   const { userAuth } = useContext(AuthContext);
   const { setIsAuthModalOpen } = useContext(IsAuthModalOpenContext);
+  const { isDark } = useContext(ThemeContext);
 
   const addToCart = () => {
     if (userAuth === null) {
@@ -37,7 +38,7 @@ const Product = () => {
   ).toFixed(2);
 
   return (
-    <div className="product-page">
+    <div className={isDark ? "product-page dark" : "product-page"}>
       <div className="product-container">
 
         <div className="product-image-container">
@@ -85,4 +86,3 @@ const Product = () => {
 };
 
 export default Product;
-
