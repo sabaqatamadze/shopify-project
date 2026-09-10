@@ -10,7 +10,7 @@ const Product = () => {
 
   const [productData, setProductData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-
+  const { userAuth } = useContext(AuthContext);
   const { setIsAuthModalOpen } = useContext(IsAuthModalOpenContext);
   const addToCart = () => {
     if (userAuth === null) {
