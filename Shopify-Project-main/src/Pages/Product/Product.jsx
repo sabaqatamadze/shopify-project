@@ -51,7 +51,7 @@ const Product = () => {
             ${productData.price}
           </p>
 
-          <button className="product-button">
+          <button className="product-button" onClick={addToCart}>
             Add to Cart
           </button>
         </div>
