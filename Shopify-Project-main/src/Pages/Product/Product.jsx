@@ -9,6 +9,13 @@ const Product = () => {
   const [productData, setProductData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
+  const { setIsAuthModalOpen } = useContext(IsAuthModalOpenContext);
+  const addToCart = () => {
+    if (userAuth === null) {
+      setIsAuthModalOpen(true);
+    }
+  };
+
   useEffect(() => {
     getSingleProduct(product_id)
       .then((resp) => setProductData(resp))
