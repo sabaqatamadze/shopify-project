@@ -15,8 +15,8 @@ const Product = () => {
   const addToCart = () => {
     if (userAuth === null) {
       setIsAuthModalOpen(true);
-    }
-  };
+    };
+ 
 
   useEffect(() => {
     getSingleProduct(product_id)
