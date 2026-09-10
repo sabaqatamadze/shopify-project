@@ -35,15 +35,26 @@ const Products = () => {
     return <h1>There are no any products</h1>;
   }
 
+  // Calculate discounted price
+  const getDiscountedPrice = (product) => {
+    return (
+      product.price -
+      (product.price * product.discountPercentage) / 100
+    );
+  };
 
+  // Sort products
   const sortedProducts = products
     ? [...products].sort((a, b) => {
+        const priceA = getDiscountedPrice(a);
+        const priceB = getDiscountedPrice(b);
+
         if (sort === "low-high") {
-          return a.price - b.price;
+          return priceA - priceB;
         }
 
         if (sort === "high-low") {
-          return b.price - a.price;
+          return priceB - priceA;
         }
 
         return 0;
