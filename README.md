@@ -338,6 +338,10 @@ Frontend Developer focused on building modern web applications with React and Ja
 
 https://github.com/sabaqatamadze
 
+### Linkedin
+
+https://www.linkedin.com/in/saba-qatamadze-762b73357
+
 ---
 
 ## 📄 License
