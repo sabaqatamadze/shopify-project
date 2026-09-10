@@ -7,7 +7,7 @@ The project includes product browsing, categories, authentication, shopping cart
 ## 🚀 Live Demo
 
 **Live Website:**
-Add your deployed website URL here.
+https://shopify-project-eight.vercel.app/
 
 **GitHub Repository:**
 https://github.com/sabaqatamadze/shopify-project
