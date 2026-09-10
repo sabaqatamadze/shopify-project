@@ -1,3 +1,4 @@
+```jsx
 import { getSingleProduct } from "@/helper/api";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -5,6 +6,7 @@ import "./Product.css";
 
 const Product = () => {
   const { product_id } = useParams();
+
   const [productData, setProductData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -12,18 +14,46 @@ const Product = () => {
     getSingleProduct(product_id)
       .then((resp) => setProductData(resp))
       .finally(() => setIsLoading(false));
-  }, []);
+  }, [product_id]);
+
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <div className="product-loading">Loading...</div>;
   }
+
   return (
-    <div>
-      <img src={productData.thumbnail} />
-      <h3>{productData.title}</h3>
-      <p>{productData.description}</p>
-      <p>${productData.price}</p>
+    <div className="product-page">
+      <div className="product-container">
+
+        <div className="product-image-container">
+          <img
+            className="product-image"
+            src={productData.thumbnail}
+            alt={productData.title}
+          />
+        </div>
+
+        <div className="product-info">
+          <h1 className="product-title">
+            {productData.title}
+          </h1>
+
+          <p className="product-description">
+            {productData.description}
+          </p>
+
+          <p className="product-price">
+            ${productData.price}
+          </p>
+
+          <button className="product-button">
+            Add to Cart
+          </button>
+        </div>
+
+      </div>
     </div>
   );
 };
 
 export default Product;
+```
