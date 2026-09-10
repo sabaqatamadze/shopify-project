@@ -1,3 +1,4 @@
+
 import { getSingleProduct } from "@/helper/api";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -30,6 +31,11 @@ const Product = () => {
     return <div className="product-loading">Loading...</div>;
   }
 
+  const newPrice = (
+    productData.price -
+    (productData.price * productData.discountPercentage) / 100
+  ).toFixed(2);
+
   return (
     <div className="product-page">
       <div className="product-container">
@@ -51,9 +57,19 @@ const Product = () => {
             {productData.description}
           </p>
 
-          <p className="product-price">
-            ${productData.price}
-          </p>
+          <div className="product-price-place">
+            <p className="product-new-price">
+              ${newPrice}
+            </p>
+
+            <p className="product-old-price">
+              ${productData.price}
+            </p>
+
+            <span className="product-percentage">
+              -{productData.discountPercentage}%
+            </span>
+          </div>
 
           <button
             className="product-button"
@@ -69,3 +85,4 @@ const Product = () => {
 };
 
 export default Product;
+
