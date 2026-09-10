@@ -35,7 +35,7 @@ const Products = () => {
     return <h1>There are no any products</h1>;
   }
 
-  // Make a copy so we don't modify the original products array
+
   const sortedProducts = products
     ? [...products].sort((a, b) => {
         if (sort === "low-high") {
