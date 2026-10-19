@@ -6,6 +6,7 @@ import AuthModal from "@/components/AuthModal/AuthModal";
 import { IsAuthModalOpenContext } from "@/contexts/AuthModalContext";
 import Swal from "sweetalert2";
 import { ErrorContext } from "@/contexts/ErrorContext";
+import { Analytics } from "@vercel/analytics/react";
 const App = () => {
   const { isDark } = useContext(ThemeContext);
   const { isAuthModalOpen } = useContext(IsAuthModalOpenContext);
@@ -28,6 +29,7 @@ const App = () => {
       {isAuthModalOpen && <AuthModal />}
 
       <Routers />
+      <Analytics />
     </div>
   );
 };
