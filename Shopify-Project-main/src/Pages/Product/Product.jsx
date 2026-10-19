@@ -1,11 +1,5 @@
 import { getSingleProduct } from "@/helper/api";
-<<<<<<< HEAD
-import { AuthContext } from "@/contexts/AuthContext";
-import { IsAuthModalOpenContext } from "@/contexts/AuthModalContext";
-import React, { useEffect, useState } from "react";
-=======
 import React, { useContext, useEffect, useState } from "react";
->>>>>>> 09b1c6911d658ebf3aa7b50ff7ae525b6ada32ef
 import { useParams } from "react-router-dom";
 import "./Product.css";
 import { AuthContext } from "@/contexts/AuthContext";
@@ -33,21 +27,10 @@ const Product = () => {
   useEffect(() => {
     getSingleProduct(product_id)
       .then((resp) => setProductData(resp))
-<<<<<<< HEAD
-      .finally(() => setIsLoading());
-  }, []);
 
-   const { userAuth } = useContext(AuthContext);
-    const { setIsAuthModalOpen } = useContext(IsAuthModalOpenContext);
-    const addToCart = () => {
-      if (userAuth === null) {
-        setIsAuthModalOpen(true);
-      }
-=======
       .finally(() => setIsLoading(false));
   }, [product_id]);
 
->>>>>>> 09b1c6911d658ebf3aa7b50ff7ae525b6ada32ef
   if (isLoading) {
     return <div className="product-loading">Loading...</div>;
   }
@@ -58,14 +41,7 @@ const Product = () => {
   ).toFixed(2);
 
   return (
-<<<<<<< HEAD
-    <div>
 
-      <img src={productData.thumbnail} />
-      <h3>{productData.title}</h3>
-      <p>{productData.description}</p>
-      <p>${productData.price}</p>
-=======
     <div className={isDark ? "product-page dark" : "product-page"}>
       <div className="product-container">
 
@@ -109,7 +85,6 @@ const Product = () => {
         </div>
 
       </div>
->>>>>>> 09b1c6911d658ebf3aa7b50ff7ae525b6ada32ef
     </div>
   );
 };
