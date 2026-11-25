@@ -311,7 +311,7 @@ This project was built to practice and demonstrate:
 
 Possible future improvements include:
 
-* [ ] Product search
+* [ x ] Product search
 * [ ] Product filtering
 * [ ] Product sorting
 * [ ] Quantity controls in cart
