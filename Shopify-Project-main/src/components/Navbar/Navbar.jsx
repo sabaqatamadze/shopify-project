@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { FiMoon } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { IoSunnyOutline } from "react-icons/io5";
-
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { ThemeContext } from "@/contexts/ThemeContext";
 import { IsAuthModalOpenContext } from "@/contexts/AuthModalContext";
@@ -25,6 +24,9 @@ const Navbar = () => {
     localStorage.removeItem("accToken");
   };
 
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+
   return (
     <nav className={isDark ? "nav-bar dark" : "nav-bar"}>
       <div className="nav-container">
@@ -32,10 +34,29 @@ const Navbar = () => {
           <Link to="/">Shopify</Link>
         </div>
         <div className="search-bar">
-          <input type="text" placeholder="Search for a product..." />
-          <button className="search-btn">
-            <IoSearch />
-          </button>
+          <form
+            className="search-bar"
+            onSubmit={(e) => {
+              e.preventDefault();
+
+              if (search.trim()) {
+                navigate(
+                  `/products?search=${encodeURIComponent(search.trim())}`,
+                );
+              }
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Search for a product..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+
+            <button className="search-btn" type="submit">
+              <IoSearch />
+            </button>
+          </form>
         </div>
         <div className="nav-right-side">
           <div>
